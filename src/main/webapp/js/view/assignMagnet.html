@@ -1,0 +1,28 @@
+<section>
+	<div class="containermargin">
+
+		<div class='row'>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div
+					class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-lg-6 col-md-6 col-sm-6 col-xs-6 bigoutercell">
+					<div class="biginnercell" ng-class="{cellyellow:color==='yellow',cellgrey:color==='grey'}"><p class="celltext">{{cellId}}</p></div>
+				</div>
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div>
+					<input placeholder="Enter Magnet Serial No" class="userinput magnetSerialtextbox"
+						ng-model="magnetSerialNo" />
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div>
+					<input ng-click="assignMagnet()" type="button" class="btn btn-block btn-success updatemagnet" value="Update Magnet Status"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>

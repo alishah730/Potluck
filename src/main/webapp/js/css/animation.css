@@ -1,0 +1,171 @@
+/***switch****/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 768px){	
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 22px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+} 
+/*****toaster******/
+.toast-center {
+    margin: auto;
+    padding: 10px;
+    left: 21%;
+    top: 29%;
+}
+
+/********loader*******/
+
+.loaderDivTranslucent{
+    background: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    opacity:0.7;
+    z-index:4000;
+}
+.loaderDivTranslucent img{
+    position: fixed;
+    bottom: 400px;
+    left: 345px;
+}
+#loaderImage{
+    position: relative;
+	width: 49%;
+    height: 60%;
+    margin-top: 15%;
+}
+
+.loaderouterbody{
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    background: white;
+    border: 2px solid;
+    border-color: #128cc5;
+    border-radius: 0.5em;
+    z-index: 5000;
+    text-align: center;
+}
+
+.loaderText{
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: 30px;
+    margin-left: 26px;
+    
+}
+
+/*****radio buttons****/
+
+.radiobutton{
+	background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+.radioSelected{
+	background-image: url(../images/Radio_selected.png) !important;
+}
+.radioUnSelected{
+	background-image: url(../images/Radio_unselected.png);
+}
+.hideInput{
+    display: none;
+}
+
+/****high chart***/
+.highcharts-button {
+    display: none;
+}
+.highcharts-range-selector-buttons{
+	display: none;
+}

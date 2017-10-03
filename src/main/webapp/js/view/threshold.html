@@ -1,0 +1,107 @@
+<section>
+	<div class='row'>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<!-- 	<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2 removepaddingright">
+				<div class="thresholdcellbox cellgreencolor">{{MagnetDetail.cell_id}}</div>
+			</div> -->
+			<div
+				class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removepaddingright removepaddingleft">
+				<div style="float: right; padding-top: 8px;" ng-show="userRole.isAdmin || userRole.groupId!==2">
+					<span style="color: grey; font-weight: bold;">Notify</span> <span>
+						<label class="switch"
+						style="margin-bottom: 0; vertical-align: bottom;"> <input
+							type="checkbox" 
+							ng-model="MagnetDetail.cell_level_notification_status" ng-change="updateNotificationSatus()">
+							<div class="slider round"></div>
+					</label>
+					</span>
+				</div>
+				<div class="thresholdmagserialtext">{{MagnetDetail.display_name}}<span ng-show="MagnetDetail.magnet_serial_number">-SL No: {{MagnetDetail.magnet_serial_number}}</span></div>
+			</div>
+		</div>
+	</div>
+
+	<div class='row setThresholdValueRow'>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="setthresholdvaluetext">VIEW THRESHOLD VALUE</div>
+		</div>
+	</div>
+	<div class="row thresholdhead">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sensorrow">
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 sensorrow thresholdhead1"><span class="sensertext">Name</span></div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 sensorrow"><span class="sensertext">High</span></div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 sensorrow"><span class="sensertext">Low</span></div>
+	</div>
+	</div>
+	<div class="row">
+		<div>
+			<div ng-repeat="senser in senserlist">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sensorrow" ng-click="selectRow($index)" 
+				ng-class="{selectedRow:userselectedRow===$index,upperRowOfSelected:$index===userselectedRow-1}">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						<span class="sensertext">{{senser.sensors}}
+							<span ng-show="senser.unit">({{senser.unit}})</span></span>
+					</div>
+				<!-- 	<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 removepaddingright removepaddingleft">
+						<div>
+							<label class="operendbackground"
+								ng-class="{lessthn:senser.operand==='<='||senser.operand==='<',greterthn:senser.operand==='>='||senser.operand==='>'}"> <input
+								type="checkbox" style="display: none;" name="options"
+								ng-true-value="'>='" ng-false-value="'<='"
+								ng-model="senser.operand" ng-disabled="!(userRole.isAdmin || userRole.groupId!==2)">
+							</label>
+						</div>
+					</div> -->
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">					
+						<!-- <input type="text" class="senservaluetext thresholdvalueinput"
+							ng-model="senser.high | number:2" readonly ng-disabled="!(userRole.isAdmin || userRole.groupId!==2)" ng-class="{noInputBorder:!userRole.isAdmin}"> -->
+							<div type="text" class="senservaluetext thresholdvalueinput"
+                            ng-bind="senser.high | number:2"></div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">					
+						<!-- <input type="text" class="senservaluetext thresholdvalueinput"
+							ng-model="senser.low | number:2" readonly ng-disabled="!(userRole.isAdmin || userRole.groupId!==2)" ng-class="{noInputBorder:!userRole.isAdmin}"> -->
+							<div type="text" class="senservaluetext thresholdvalueinput "
+                            ng-bind="senser.low | number:2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<br>
+	<!-- <div class='row' ng-show="userRole.isAdmin || userRole.groupId!==2">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 buttonalign"
+				ng-click="updateSensorThresholdList()">
+				<button type="button" class="btn savebutton buttonformat">Save</button>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 buttonalign" ng-click="goToHomeScreen()">
+				<button type="button" class="btn cancelbutton buttonformat">Cancel</button>
+			</div>
+		</div>
+	</div> -->
+	<br>
+</section>
+<script>
+	$('.btn-toggle').click(function() {
+		console.log()
+		$(this).find('.btn').toggleClass('active');
+
+		if ($(this).find('.btn-primary').size() > 0) {
+			$(this).find('.btn').toggleClass('btn-primary');
+		}
+		if ($(this).find('.btn-danger').size() > 0) {
+			$(this).find('.btn').toggleClass('btn-danger');
+		}
+		if ($(this).find('.btn-success').size() > 0) {
+			$(this).find('.btn').toggleClass('btn-success');
+		}
+		if ($(this).find('.btn-info').size() > 0) {
+			$(this).find('.btn').toggleClass('btn-info');
+		}
+
+		$(this).find('.btn').toggleClass('btn-default');
+
+	});
+</script>

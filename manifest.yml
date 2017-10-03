@@ -7,3 +7,16 @@ applications:
   buildpack: java-buildpack
   stack: cflinuxfs2
   #services:  #- ge-potluck
+  
+  
+  applications:
+  - name: magmonfactoryApp
+    buildpack: java-buildpack
+    path: /target/magmon.war
+    services:
+      - magmon-postgres
+      - baywatch-timeseries
+    env: 
+      predix_timeseries_name: baywatch-timeseries 
+
+      

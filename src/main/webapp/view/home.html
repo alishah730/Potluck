@@ -1,0 +1,123 @@
+<div>
+	<div class="containermargin">
+		<div class='row' ng-show="userRole.isAdmin">
+			<div
+				class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removepaddingright removepaddingleft">
+				<div class='manageUserheader' ui-sref='manageUser'>
+					<p class="manageusertext">
+						<span class="manageuserIcon"></span>Manage User
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class='row'>
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 col-xs-6 removepaddingright removepaddingleft">
+				<div class="actiontabstyle  firsttab"
+					ng-click="action='moniterMagnet'"
+					ng-class="{selectab:action==='moniterMagnet'}">
+					<p class="actiontabtext">Monitor Magnets</p>
+				</div>
+			</div>
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 col-xs-6 removepaddingright removepaddingleft"
+				ng-show="userRole.isAdmin || userRole.groupId!==2">
+				<div class="actiontabstyle  lasttab"
+					ng-click="action='setThreshold'"
+					ng-class="{selectab:action==='setThreshold'}">
+					<p class="actiontabtext">View Thresholds</p>
+				</div>
+			</div>
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 col-xs-6 removepaddingright removepaddingleft"
+				ng-hide="userRole.isAdmin || userRole.groupId!==2">
+				<div class="actiontabstyle  lasttab"
+					ng-click="action='setThreshold'"
+					ng-class="{selectab:action==='setThreshold'}">
+					<p class="actiontabtext">View Thresholds</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removepaddingright removepaddingleft" style="padding-top: 5px;">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 removepaddingleft">
+			<div class="cellgreencolor legenddiv"></div>
+			<span class="legendtext">Good</span>
+		</div>
+		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 removepaddingright removepaddingleft">
+			<div class="cellyellowcolor legenddiv"></div>
+			<span class="legendtext">Missing SN</span>
+		</div>
+		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 removepaddingright removepaddingleft">
+			<div class="cellgreycolor legenddiv"></div>
+			<span class="legendtext">Empty</span>
+		</div>
+		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 removepaddingright">
+			<div class="cellredcolor legenddiv"></div>
+			<span class="legendtext">Faulty</span>
+		</div>
+	</div>
+	<br>
+	<div ng-show="userRole.groupId===1||userRole.groupId===3">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<p class="cellheader">
+					<span class="cellheadertext">ETA Cell/Magnet Status</span>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-1 col-md-2 col-sm-2 col-xs-3"
+					ng-repeat="cell in ETAcellList" ng-click="getCellDetails(cell)">
+					<div class="cellbox"
+						ng-class="{cellgreencolor:cell.color==='2',cellredcolor:cell.color==='4',cellgreycolor:cell.color==='0',cellyellowcolor:cell.color==='1',cellbluecolor:cell.color==='3'}">
+						{{cell.display_name}}
+						<div class="isThesholdEnable"
+							ng-hide="cell.cell_level_notification_status"></div>
+					</div>
+					<div class="magnetLabel" ng-show="cell.magnet_serial_number">{{cell.magnet_serial_number}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="userRole.groupId===2||userRole.groupId===3">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<p class="cellheader">
+					<span class="cellheadertext">FG Cell/Magnet Status</span>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div ng-repeat="cell in FGAcellList">
+
+				<div class="clearfix" ng-if="$index % 4== 0"></div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 cellbox-block">
+					<div class="cellbox " ng-click="getCellDetails(cell)"
+						ng-class="{cellgreencolor:cell.color==='2',cellredcolor:cell.color==='4',cellgreycolor:cell.color==='0',cellyellowcolor:cell.color==='1',cellbluecolor:cell.color==='3'}">
+						{{cell.display_name}}
+						<div class="isThesholdEnable"
+							ng-hide="cell.cell_level_notification_status"></div>
+					</div>
+					<div class="magnetLabel" ng-show="cell.magnet_serial_number">{{cell.magnet_serial_number}}</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row ">
+			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+				<div class="col-lg-1 col-md-2 col-sm-2 col-xs-3 parent"
+					ng-repeat="cell in FGAcellList" ng-click="getCellDetails(cell)">
+						<div class="cellbox "
+						ng-class="{cellgreencolor:cell.color==='2',cellredcolor:cell.color==='4',cellgreycolor:cell.color==='0',cellyellowcolor:cell.color==='1',cellbluecolor:cell.color==='3'}">
+						{{cell.display_name}}
+						<div class="isThesholdEnable" ng-hide="cell.cell_level_notification_status"></div></div>
+				   <div class="magnetLabel" ng-hide="cell.color==='0'||cell.color==='1'">{{cell.magnet_serial_number}}</div>
+				</div>				
+				</div>
+			</div> -->
+	</div>
+</div>

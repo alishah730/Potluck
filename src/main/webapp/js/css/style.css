@@ -1,0 +1,657 @@
+@font-face {
+	font-family: 'GeInspiraRegular';
+	src: url('../fonts/GEInspRg.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'GeInspiraMedium';
+	src: url('../fontNew/GEInspMd.TTF') format('truetype');
+}
+@font-face {
+	font-family: 'GeInspiraPitch';
+	src: url('../fontNew/GEInspiraPitch.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'GeInspiraSans';
+	src: url('../fontNew/GESans-Regular.ttf') format('truetype');
+}
+html, body
+{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+	font-family: GeInspiraRegular !important;
+}
+
+.navbar-inverse {
+	background-color: #2a9fdc;
+	border-color: #2a9fdc;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #ffffff;
+}
+
+.font-color {
+	color: white;
+}
+
+/* @media (max-width: 768px){
+ .container{
+  margin: 0px 15px 0px 15px;
+}
+	
+} */
+.dropdownmenu {
+	left: -103px;
+}
+
+.dropdownmenu>li {
+	padding: 1px 26px 1px 16px;
+}
+
+.glyphiconPosition {
+	float: right;
+}
+
+/*****index page*******/
+.logoutposition {
+	float: right;
+	margin: 5px 10px 0px 0px;
+}
+
+.logoutbuttoncolor {
+	background: #2a9fdc;
+}
+
+.hamgurgerstyle {
+	font-size: 26px;
+	color: white;
+}
+
+/***home page****/
+.containermargin {
+	margin: 15px 15px 0px 15px;
+}
+
+.rowline {
+	border-bottom: 1px solid rgba(107, 101, 101, 0.34);
+	box-shadow: 0px 1px 0px #e0d6d6;
+}
+.headertext{
+	font-family: GeInspiraMedium !important;
+    font-size: 17px;
+}
+
+.cellheader {
+	border-bottom: 2px solid #f7f7f7;
+	margin: 10px 24px 10px 24px;
+	padding-bottom: 5px;
+}
+
+/* .cellheader p {
+	margin: 10px 0px 10px 0px !important;
+} */
+.cellheadertext {
+	height: 30px;
+	font-size: 16px;
+	color: grey;
+	padding-left: 15px;
+	font-family: GeInspiraSans;
+}
+
+.cellgreencolor {
+	background-color: #60bd68;
+}
+.cellbluecolor {
+	background-color: blue;
+}
+.cellredcolor {
+	background-color: #fa5b5f;
+}
+
+.cellgreycolor {
+	background-color: #878787;
+}
+
+.cellyellowcolor {
+	background-color: #f9bb34;
+}
+.legenddiv{
+	width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+.legendtext{
+	    font-size: 10px;
+}
+
+.cellbox {
+    margin: 5px auto;
+    text-align: center;
+    height: 65px;
+    width: 65px;
+    padding-top: 16px;
+    font-size: 22px;
+    border-radius: 50%;
+    color: white;
+    font-family: GeInspiraMedium;
+    float: left;
+}
+.isThesholdEnable{
+	background-image: url(../images/Bell_Indicator.png);
+    background-repeat: no-repeat;
+    background-position: 1px 0px;
+    background-size: 26px 24px;
+    z-index: 2;
+    position: relative;
+    width: 26px;
+    height: 24px;
+    left: 46px;
+    top: -61px;
+}
+
+.actiontabstyle {
+	background: #e9e9e9;
+	height: 36px;
+	font-size: 14px;
+	text-align: center;
+	color: #306db5;
+	padding-top: 4px;
+	border: 1px solid #cfd6dc;
+	letter-spacing: 1px;
+	/* 	font-weight: bold; */
+}
+
+.actiontabtext {
+	margin-top: 2px;
+}
+
+.selectab {
+background: #2bb7a5 !important;
+	color: white !important;
+	border: 2px solid #2bb7a5 !important;
+}
+
+.monitermagnetselect {
+	background-image: url(../images/View-magnet-select.png) !important;
+}
+
+.monitermagnetunselect {
+	background-image: url(../images/View-magnet-unselect.png);
+}
+
+.setthresholdselect {
+	background-image: url(../images/Set-threshold-select.png) !important;
+	/*  background-size: 21px !important; */
+}
+
+.setthresholdunselect {
+	background-image: url(../images/Set-threshold-unselect.png);
+	/* background-size: 21px !important; */
+}
+
+.actiontabstyle.monitermagnetselect, .actiontabstyle.monitermagnetunselect,
+	.actiontabstyle.setthresholdselect, .actiontabstyle.setthresholdunselect
+	{
+	background-repeat: no-repeat;
+	background-size: 17px;
+	background-position: 9px;
+}
+
+.removepaddingright {
+	padding-right: 0px;
+}
+
+.removepaddingleft {
+	padding-left: 0px;
+}
+
+.manageUserheader {
+    background-color: #2a9fdc;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #2a9fdc;
+    border-radius: 4px 4px 4px 4px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.manageuserIcon{
+	background-image: url(../images/manage-user.png);
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: 1px 0px;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-right: 6px;
+}
+
+.manageusertext {
+	margin-top: 1px;
+}
+
+.firsttab {
+	border-radius: 6px 0px 0px 6px;
+}
+
+.lasttab {
+	border-radius: 0px 6px 6px 0px;
+}
+.magnetLabel{
+        text-align: center;
+    font-family: GeInspiraPitch;
+    color: #868686;
+    padding-left: -40px;
+    font-size: medium;
+    padding-top: 20px;
+    position: absolute;
+  /*   margin-left: 5px; */
+    margin-top: 49px;
+    width: 65px;
+
+}
+.cellbox-block{
+	padding-top:20px;
+}
+
+/****manage user page******/
+.subheaderrow {
+	background: #c7edfe;
+	margin-top: -10px;
+}
+
+.subtitleheadertext {
+	text-transform: capitalize;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align: center;
+	padding: 11px;
+}
+
+.userinput {
+	width: 100% !important;
+	height: 40px;
+	font-size: 18px;
+	/* background: #e9e9e9; */
+	/* border: 1px solid #d1d1d1; */
+	/* border-radius: 5px 0 0px 5px !important; */
+}
+
+.usersearch {
+	height: 40px;
+	border-radius: 0px 5px 5px 0px !important;
+}
+
+.userSearchDisable{
+	background: #c9c9c9;
+}
+.userSearchEnable {
+	background: #0b376b;
+	color: white;
+}
+
+.floatsliderright {
+	float: right;
+	/* padding-top: 3px; */
+}
+
+.checkboxtext {
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.selectuserheader {
+    color: #676767;
+    font-size: 18px;
+    padding-left: 14px;
+    border-bottom: 2px solid #f7f7f7;
+}
+
+/* .roleselection {
+	background: #e9e9e9;
+	border: 2px solid #d1d1d1;
+} */
+
+.singlerolefield {
+	padding: 3px;
+}
+
+.roletext {
+	font-size: 17px;
+	padding-left: 10px;
+	color: #6b6969;
+}
+
+.savebuttonalign {
+	text-align: right;
+}
+.cancelbuttonalign {
+	text-align: left;
+}
+.buttonalign{
+	text-align: center;
+}
+
+.buttonformat {
+    width: 111px;
+    font-size: 16px;
+    color: white
+}
+
+.geuserdiv {
+	width: 95%;
+	position: absolute;
+	z-index: 3;
+}
+
+.geuserlist {
+	height: 127px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	box-shadow: 3px 8px 16px #888888;
+	margin-bottom: 0px;
+	border-radius: 0px 0px 12px 12px;
+}
+.savebutton{
+	background-color: #2a9fdc;
+    border-color: #2a9fdc;    
+}
+.cancelbutton{
+	background-color: #68818c;
+    border-color: #68818c; 
+}
+/********moniter magnet******/
+
+.actiontabstyleMonitorMag {
+	background: #e9e9e9;
+	height: 36px;
+	font-size: 14px;
+	text-align: center;
+	color: #306db5;
+	padding-top: 7px;
+	border: 1px solid #cfd6dc;
+	letter-spacing: 1px;
+	/* 	font-weight: bold; */
+}
+
+.monitercellbox {
+	margin: 5px auto;
+	text-align: center;
+	height: 50px;
+	width: 53px;
+	font-weight: bold;
+	padding-top: 7px;
+	font-size: 24px;
+	border-radius: 50%;
+}
+
+.magentserialtext {
+	text-transform: capitalize;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 21px;
+	letter-spacing: 2px;
+	margin-left: 15px;
+	color: #0b376b;
+	text-decoration: underline;
+	margin-top: 19px;
+}
+
+.viewparametesheader {
+	background: #d4d4d4;
+	border-bottom: 2px solid #b7b6b6;
+	margin-bottom: 0px;
+}
+
+.viewparametertext {
+	font-weight: bold;
+	height: 30px;
+	font-size: 18px;
+	color: #2b2424;
+	padding-left: 15px;
+	letter-spacing: 1px;
+}
+
+.sensorrow {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #f7f7f7;
+}
+
+.senserselect {
+	background: rgba(0, 183, 165, 0.35);;
+}
+
+.sensertext {
+	font-size: 17px;
+	color: #6b6969;
+}
+
+.senservaluetext {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.warningsign {
+	color: red;
+	font-size: 19px;
+	z-index: 1;
+	position: absolute;
+	left: -6px
+}
+
+/*****set/view threshold****/
+.thresholdcellbox {
+	text-align: center;
+	height: 39px;
+	width: 10vw;
+	font-weight: bold;
+	padding-top: 7px;
+	font-size: 19px;
+}
+
+.thresholdmagserialtext {
+	text-transform: capitalize;
+	font-variant: small-caps;
+	font-size: 18px;
+	letter-spacing: 1px;
+	color: #0b376b;
+	margin-top: 9px;
+	font-family: GeInspiraMedium;
+}
+.setThresholdValueRow{
+	background: #c7edfe;
+	margin-top: 18px;
+}
+
+.setthresholdvaluetext {
+	font-size: 18px;
+	padding-left: 15px;
+	color: #575757;
+	letter-spacing: 1px;
+	font-weight: bold;
+	height: 48px;
+	padding-top: 11px;
+}
+
+.thresholdvalueinput {
+	width: 91%;
+    height: 39px;
+    text-align: center;
+    background: #f9f9fb;
+    border: 2px solid #e8e8e8;
+    border-radius: 7px;
+    padding-top: 5px;
+}
+
+.operendbackground {
+	background-repeat: no-repeat;
+	background-size: 48px 31px;
+	background-position: 2px 6px;
+	width: 54px;
+	height: 37px;
+	margin-bottom: 0px;
+}
+
+.lessthn {
+	background-image: url(../images/lessthanNotSelected.png);
+}
+
+.greterthn {
+	background-image: url(../images/greaterthanUnselected.png) !important;
+}
+
+.noInputBorder {
+	border: 0px;
+}
+.selectedRow{
+	background: rgba(0, 183, 165, 0.35);
+	border-bottom:0px;
+}
+.selectedRow .lessthn {
+	background-image: url(../images/lessthanSelected.png);
+}
+
+.selectedRow .greterthn {
+	background-image: url(../images/greaterthanSelected.png) !important;
+}
+.upperRowOfSelected{
+	border-bottom:0px;
+}
+
+/************assign Magnet*******************/
+.bigoutercell {
+	background: #b9b9b9;
+	border-radius: 14px;
+	margin-bottom: 31px;
+}
+
+.biginnercell {
+	text-align: center;
+	height: 124px;
+	border-radius: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0px 5px 3px grey;
+}
+
+.celltext {
+	font-size: 68px;
+	color: white;
+	padding-top: 12px;
+}
+
+.cellyellow {
+	background: #f9bb34;
+}
+
+.cellgrey {
+	background: #878787;
+}
+
+.magnetSerialtextbox {
+	border-radius: 5px !important;
+	padding-left: 23px;
+}
+
+.updatemagnet {
+	margin-top: 15px;
+	height: 53px;
+	font-size: 19px;
+}
+/*******error Page*******/
+
+.centerText,.centerText p {
+	text-align: center;
+    font-size: 19px;
+}
+.errorPageBody{
+	background: -webkit-linear-gradient(#00b4ff, #00ffdc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00b4ff, #00ffdc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00b4ff, #00ffdc); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#00b4ff, #00ffdc);
+}
+.Isign{
+	background-image: url(../images/iSign.png);
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.whiteheader{
+	font-size: 20px !important;
+    color: white;
+}
+.whiteheader span{
+ border-bottom: 1px solid;
+    padding-bottom: 4px;
+}
+
+.loginbutton{
+	height: 46px;
+    width: 230px;
+    font-size: 18px;
+}
+
+.iIcon{
+	    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #337ab7;
+    color: #00bff9;
+    display: inline-block;
+    font-size: 33px;
+}
+
+/*********Model*********/
+.cellinModal {
+	padding: 7px 15px 8px 15px;
+}
+
+.cellposition {
+	top: 6%;
+}
+.parent-wrapper {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.parent {
+    display: flex;
+    font-size: 0;
+    flex-wrap: wrap;
+   /* margin: -10px 0 0 -10px;*/
+}
+.child {
+    display: inline-block;
+    /* background: blue; */
+  /*  margin: 10px 10px 10px 10px;*/
+    flex-grow: 1;
+    /* height: 100px; */
+}
+.thresholdhead{
+	      text-align: center;
+    vertical-align: middle;
+   
+}
+.thresholdhead span{
+	    font-weight: bold;
+   
+    font-size: medium;
+}
+.thresholdhead1 {
+	       text-align: left !important;
+
+}
+.modalbodytext {
+	text-align: center;
+	font-size: 19px;
+}
